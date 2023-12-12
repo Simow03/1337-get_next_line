@@ -1,19 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.h                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mstaali <mstaali@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/08 05:53:38 by mstaali           #+#    #+#             */
-/*   Updated: 2023/12/12 22:33:15 by mstaali          ###   ########.fr       */
+/*   Created: 2023/12/12 22:17:21 by mstaali           #+#    #+#             */
+/*   Updated: 2023/12/12 22:33:07 by mstaali          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#ifndef GET_NEXT_LINE_BONUS_H
+# define GET_NEXT_LINE_BONUS_H
 
 # include <stdlib.h>
+# include <limits.h>
 # include <unistd.h>
 # include <fcntl.h>
 

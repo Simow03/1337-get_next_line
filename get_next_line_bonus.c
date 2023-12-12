@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mstaali <mstaali@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/08 05:52:38 by mstaali           #+#    #+#             */
-/*   Updated: 2023/12/12 21:59:47 by mstaali          ###   ########.fr       */
+/*   Created: 2023/12/12 22:17:03 by mstaali           #+#    #+#             */
+/*   Updated: 2023/12/12 22:38:04 by mstaali          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 char	*read_and_store(int fd, char *stored)
 {
@@ -38,19 +38,19 @@ char	*read_and_store(int fd, char *stored)
 
 char	*get_next_line(int fd)
 {
-	static char	*stored;
+	static char	*stored[OPEN_MAX];
 	char		*line;
 
 	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, NULL, 0))
 	{
-		free(stored);
-		stored = NULL;
+		free(stored[fd]);
+		stored[fd] = NULL;
 		return (NULL);
 	}
-	stored = read_and_store(fd, stored);
-	if (!stored)
+	stored[fd] = read_and_store(fd, stored[fd]);
+	if (!stored[fd])
 		return (NULL);
-	line = extract_line(stored);
-	stored = clean_last_line(stored);
+	line = extract_line(stored[fd]);
+	stored[fd] = clean_last_line(stored[fd]);
 	return (line);
 }
