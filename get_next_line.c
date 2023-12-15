@@ -6,7 +6,7 @@
 /*   By: mstaali <mstaali@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 05:52:38 by mstaali           #+#    #+#             */
-/*   Updated: 2023/12/14 18:15:32 by mstaali          ###   ########.fr       */
+/*   Updated: 2023/12/15 19:36:22 by mstaali          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ char	*get_next_line(int fd)
 	char		*line;
 
 	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, NULL, 0) < 0
-		|| BUFFER_SIZE >= INT32_MAX)
+		|| BUFFER_SIZE >= INT_MAX)
 	{
 		free(stored);
 		stored = NULL;

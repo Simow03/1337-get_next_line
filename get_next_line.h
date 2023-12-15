@@ -6,7 +6,7 @@
 /*   By: mstaali <mstaali@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 05:53:38 by mstaali           #+#    #+#             */
-/*   Updated: 2023/12/14 18:28:01 by mstaali          ###   ########.fr       */
+/*   Updated: 2023/12/15 19:36:14 by mstaali          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define GET_NEXT_LINE_H
 
 # include <stdlib.h>
+# include <limits.h>
 # include <unistd.h>
 
 # ifndef BUFFER_SIZE
