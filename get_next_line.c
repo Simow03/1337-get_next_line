@@ -6,7 +6,7 @@
 /*   By: mstaali <mstaali@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 05:52:38 by mstaali           #+#    #+#             */
-/*   Updated: 2023/12/15 19:36:22 by mstaali          ###   ########.fr       */
+/*   Updated: 2023/12/15 23:08:13 by mstaali          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*read_and_store(int fd, char *stored)
 	char	*buffer;
 	int		readed;
 
-	buffer = (char *)malloc(BUFFER_SIZE + 1);
+	buffer = (char *)malloc((size_t)BUFFER_SIZE + 1);
 	if (!buffer)
 		return (NULL);
 	readed = 1;
@@ -41,8 +41,7 @@ char	*get_next_line(int fd)
 	static char	*stored;
 	char		*line;
 
-	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, NULL, 0) < 0
-		|| BUFFER_SIZE >= INT_MAX)
+	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, NULL, 0) < 0)
 	{
 		free(stored);
 		stored = NULL;
